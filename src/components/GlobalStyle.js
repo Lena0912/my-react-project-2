@@ -1,4 +1,10 @@
-:root {
+import { createGlobalStyle } from "styled-components";
+import "modern-normalize";
+
+export const GlobalStyle = createGlobalStyle`
+body{
+    /* color: ${(props) => (props.$whiteColor ? "white" : "black")}; */
+    :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
@@ -42,12 +48,12 @@ button {
   font-size: 1em;
   font-weight: 500;
   font-family: inherit;
-  background-color: #1a1a1a;
+  background-color:rgb(22, 167, 97);
   cursor: pointer;
   transition: border-color 0.25s;
 }
 button:hover {
-  border-color: #646cff;
+  border-color: rgb(3, 31, 10);
 }
 button:focus,
 button:focus-visible {
@@ -66,3 +72,13 @@ button:focus-visible {
     background-color: #f9f9f9;
   }
 }
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+ul {
+  list-style: none;
+}
+}`;

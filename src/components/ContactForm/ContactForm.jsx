@@ -4,10 +4,11 @@ import * as Yup from "yup";
 
 const ContactForm = ({ onAdd }) => {
   const handleSubmit = (values, { resetForm }) => {
+    const { name, number } = values;
     onAdd({
       id: nanoid(),
-      name: values.name,
-      number: values.number,
+      name: name,
+      number: number,
 
     });
     resetForm();

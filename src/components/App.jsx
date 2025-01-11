@@ -1,25 +1,21 @@
-
-
-import initialContacts from "../components/data.json"
+import initialContacts from "../components/data.json";
 import { useEffect, useState } from "react";
-import ContactForm from "./ContactForm";
-import "../components/App.css";
-import SearchBox from "./SearchBox";
-import ContactList from "./ContactList";
 
-
+import SearchBox from "./SearchBox/SearchBox";
+import ContactList from "./ContactList/ContactList";
+import ContactForm from "./ContactForm/ContactForm";
 
 const App = () => {
-  const [contacts, setContacts] = useState(initialContacts) ;  
+  const [contacts, setContacts] = useState(initialContacts);
 
-  const [filter, setFilter] = useState('');
+  const [filter, setFilter] = useState("");
 
   useEffect(() => {
-    localStorage.setItem('contacts', JSON.stringify( contacts ));
+    localStorage.setItem("contacts", JSON.stringify(contacts));
   }, [contacts]);
 
   const addContact = (newContact) => {
-    setContacts((prevContacts) => [...prevContacts, newContact]);    
+    setContacts((prevContacts) => [...prevContacts, newContact]);
   };
 
   const deleteContact = (contactId) => {
@@ -28,7 +24,8 @@ const App = () => {
     });
   };
   const visibleContacts = contacts.filter((contact) =>
-    contact.name.toLowerCase().includes(filter.toLowerCase()));
+    contact.name.toLowerCase().includes(filter.toLowerCase())
+  );
 
   return (
     <>
