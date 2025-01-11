@@ -2,9 +2,11 @@
 const Contact = ({ contact: { id, name, number }, onDelete }) => {
   return (
     <>
-      <p>{name}</p>
-      <p>{number}</p>
-      <button onClick={() => onDelete(id)}>Delete</button>
+      <p className="contactName">{name}</p>
+      <p className="contactName">{number}</p>
+      <button className="contactDelBtn" onClick={() => onDelete(id)}>
+        Delete
+      </button>
     </>
   );
 };
